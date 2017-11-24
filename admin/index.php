@@ -136,11 +136,11 @@ $(document).ready(function () {
 
     function applyUpdate(update) {
         if (update.available) {
-            $('<div class="update-check message error"><p>'
-                + '<?php _e('您当前使用的版本是 %s'); ?>'.replace('%s', update.current) + '<br />'
-                + '<strong><a href="' + update.link + '" target="_blank">'
-                + '<?php _e('官方最新版本是 %s'); ?>'.replace('%s', update.latest) + '</a></strong></p></div>')
-            .insertAfter('.typecho-page-title').effect('highlight');
+            // $('<div class="update-check message error"><p>'
+            //     + '<?php _e('您当前使用的版本是 %s'); ?>'.replace('%s', update.current) + '<br />'
+            //     + '<strong><a href="' + update.link + '" target="_blank">'
+            //     + '<?php _e('官方最新版本是 %s'); ?>'.replace('%s', update.latest) + '</a></strong></p></div>')
+            // .insertAfter('.typecho-page-title').effect('highlight');
         }
     }
 
@@ -148,8 +148,8 @@ $(document).ready(function () {
         applyUpdate($.parseJSON(update));
     } else {
         $.get('<?php $options->index('/action/ajax?do=checkVersion'); ?>', function (o, status, resp) {
-            applyUpdate(o);
-            cache.setItem('update', resp.responseText);
+            //applyUpdate(o);
+            //cache.setItem('update', resp.responseText);
         }, 'json');
     }
 });

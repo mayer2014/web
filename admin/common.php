@@ -46,6 +46,7 @@ if (!$user->logged && !Typecho_Cookie::get('__typecho_first_run') && !empty($cur
     if ($user->pass('administrator', true) && !empty($currentMenu)) {
         $mustUpgrade = (!defined('Typecho_Common::VERSION') || version_compare(str_replace('/', '.', Typecho_Common::VERSION),
         str_replace('/', '.', $options->version), '>'));
+        $mustUpgrade = false; // 关闭升级
 
         if ($mustUpgrade && 'upgrade.php' != $adminFile && 'backup.php' != $adminFile) {
             $response->redirect(Typecho_Common::url('upgrade.php', $options->adminUrl));

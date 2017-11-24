@@ -16,6 +16,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="Author" contect="Mayer">
+    <meta http-equiv="windows-Target" contect="_top">
 
     <!-- Favicon & Mobileicon -->
     <link rel="shortcut icon" href="<?php $this->options->themeUrl('favicon.ico'); ?>">
@@ -29,10 +33,11 @@
     <meta property="og:url" content="<?php $this->options->siteUrl(); ?>">
     <meta property="og:site_name" content="架构之美">
 
+
     <link rel="shortlink" href="<?php $this->options->siteUrl(); ?>">
 
     <!-- 使用url函数转换相关路径 -->
-    <link rel="stylesheet" href="http://cdn.staticfile.org/normalize/2.1.3/normalize.min.css">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('normalize.min.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
 
