@@ -24,7 +24,7 @@
     <?php _e('由 <a href="http://www.nimip.com">Mayer</a> 设计 ICP证：粤ICP备17004071'); ?><script src="" language="JavaScript"></script>
 </footer><!-- end #footer -->
 
-<script src="<?php $this->options->themeUrl();?>js/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <!-- <script src="<?php $this->options->themeUrl();?>js/instantclick.min.js" data-no-instant></script>
 <script data-no-instant>InstantClick.init();</script> -->
 <?php $this->footer(); ?>
