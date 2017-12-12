@@ -436,6 +436,18 @@ class Widget_Options extends Typecho_Widget
     }
 
     /**
+     * 输出CDN路径
+     *
+     * @access public
+     * @param string $path 子路径
+     * @return void
+     */
+    public function cdn($path = NULL)
+    {
+        echo Typecho_Common::url($path, $this->cdn)?:$this->themeUrl();
+    }
+
+    /**
      * 输出解析地址
      *
      * @access public

@@ -88,6 +88,11 @@ class Widget_Options_General extends Widget_Abstract_Options implements Widget_I
                 ->addRule('url', _t('请填写一个合法的URL地址')));
         }
 
+        /** 站点CDN地址 */
+        $siteCDN = new Typecho_Widget_Helper_Form_Element_Text('cdn', NULL, $this->options->cdn, _t('CDN地址'), _t('CDN地址用于加速访问，如果不存在则从本地服务器读取'));
+        $siteCDN->input->setAttribute('class', 'w-100 mono');
+        $form->addInput($siteCDN);
+
         /** 站点描述 */
         $description = new Typecho_Widget_Helper_Form_Element_Text('description', NULL, $this->options->description, _t('站点描述'), _t('站点描述将显示在网页代码的头部.'));
         $form->addInput($description->addRule('xssCheck', _t('请不要在站点描述中使用特殊字符')));
@@ -215,7 +220,7 @@ class Widget_Options_General extends Widget_Abstract_Options implements Widget_I
             $this->response->goBack();
         }
 
-        $settings = $this->request->from('title','description', 'keywords', 'allowRegister', 'allowXmlRpc', 'lang', 'timezone');
+        $settings = $this->request->from('title','description', 'cdn', 'keywords', 'allowRegister', 'allowXmlRpc', 'lang', 'timezone');
         $settings['attachmentTypes'] = $this->request->getArray('attachmentTypes');
 
         if (!defined('__TYPECHO_SITE_URL__')) {
