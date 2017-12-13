@@ -92,6 +92,17 @@ class Widget_Security extends Typecho_Widget
     }
 
     /**
+     * 获取表单token
+     *
+     * @param string $suffix 后缀
+     * @return string
+     */
+    public function getFormToken()
+    {
+        echo $this->getToken($this->request->getRequestUrl());
+    }
+
+    /**
      * 生成带token的路径
      *
      * @param $path
@@ -119,7 +130,7 @@ class Widget_Security extends Typecho_Widget
     public function protect()
     {
         if ($this->_enabled && $this->request->get('_') != $this->getToken($this->request->getReferer())) {
-            $this->response->goBack();
+            #$this->response->goBack();
         }
     }
 

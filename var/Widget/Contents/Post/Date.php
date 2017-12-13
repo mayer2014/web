@@ -95,6 +95,7 @@ class Widget_Contents_Post_Date extends Typecho_Widget
 
         foreach ($result as $row) {
             $row['permalink'] = Typecho_Router::url('archive_' . $this->parameter->type, $row, $this->widget('Widget_Options')->index);
+	    #$row['permalink'] = substr(Typecho_Router::url('archive_' . $this->parameter->type, $row, $this->widget('Widget_Options')->index),0,-1).'.html';
             $this->push($row);
         }
     }

@@ -47,6 +47,7 @@ Typecho_Widget::widget('Widget_Contents_Post_Edit')->to($post);
                     <p class="submit clearfix">
                         <span class="right">
                             <input type="hidden" name="cid" value="<?php $post->cid(); ?>" />
+                            <input type="hidden" name="_" value="<?php $security->getFormToken(); ?>" />
                             <button type="submit" name="do" value="save" id="btn-save" class="btn"><?php _e('保存草稿'); ?></button>
                             <button type="submit" name="do" value="publish" class="btn primary" id="btn-submit"><?php _e('发布文章'); ?></button>
                             <?php if ($options->markdown && (!$post->have() || $post->isMarkdown)): ?>
